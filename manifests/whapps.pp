@@ -11,7 +11,7 @@ class kazoo::whapps (
   
   package { 'kazoo-R15B': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
   package { 'kazoo-kamailio': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
-  package { 'haproxy': ensure => installed, require => File['/etc/yum.repos.d/epel.repo'] }
+  package { 'haproxy': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
   package { 'rsyslog': ensure => installed }
   
   #configure kamailio

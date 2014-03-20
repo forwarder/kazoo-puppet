@@ -9,7 +9,7 @@ class kazoo::freeswitch (
   require kazoo
   
   package { 'kazoo-freeswitch-R15B': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
-  package { 'haproxy': ensure => installed, require => File['/etc/yum.repos.d/epel.repo'] }
+  package { 'haproxy': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
   
   #configure freeswitch
   file {'/etc/kazoo/freeswitch/autoload_configs/kazoo.conf.xml':
