@@ -22,13 +22,13 @@ defaults
   
 listen bigcouch-data 0.0.0.0:15984
   balance roundrobin
-    <% @bigcouch_nodes.each do |node| -%>
+    <% @bigcouch_nodes.each do |key, node| -%>
     server <%= node['hostname'] %> <%= node['ip'] %>:5984 check
     <% end -%>
   
 listen bigcouch-mgr 0.0.0.0:15986
   balance roundrobin
-    <% @bigcouch_nodes.each do |node| -%>
+    <% @bigcouch_nodes.each do |key, node| -%>
     server <%= node['hostname'] %> <%= node['ip'] %>:5986 check
     <% end -%>
   
