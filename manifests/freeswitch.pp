@@ -47,7 +47,7 @@ class kazoo::freeswitch (
   #start services
   service { 'haproxy':
     ensure => running,
-    enabled => true,
+    enable => true,
     require => [
       Package['haproxy'],
       Exec['remove-haproxy-cfg','symlink-haproxy-cfg']

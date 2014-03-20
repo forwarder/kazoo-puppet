@@ -70,13 +70,13 @@ class kazoo::whapps (
   #setup services
   service { 'rabbitmq-server':
     ensure => running,
-    enabled => true,
+    enable => true,
     require => Package['kazoo-R15B']
   }
  
   service { 'rsyslog':
     ensure => running,
-    enabled => true,
+    enable => true,
     require => Package['rsyslog']
   }
   Service['rsyslog'] {
@@ -85,7 +85,7 @@ class kazoo::whapps (
 
   service { 'haproxy':
     ensure => running,
-    enabled => true,
+    enable => true,
     require => [
       Package['haproxy'],
       File['/etc/haproxy/haproxy.conf']
