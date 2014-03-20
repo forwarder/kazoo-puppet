@@ -22,7 +22,7 @@ class kazoo::bigcouch (
   }
   
   if $is_primary == true {
-    create_resources(add_node, $bigcouch_nodes }
+    create_resources(add_node, $bigcouch_nodes )
   }
   
   service { 'bigcouch':
