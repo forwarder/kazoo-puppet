@@ -70,7 +70,7 @@ Feel free to fork and send pull requests for any improvements.
   
     }
 
-    node 'db01' inherits kazoonode {
+    node 'db01.yourhostname.com' inherits kazoonode {
   
       class { 'kazoo::bigcouch':
         cookie => $cookie,
@@ -80,7 +80,7 @@ Feel free to fork and send pull requests for any improvements.
   
     }
     
-    node 'db02' inherits kazoonode {
+    node 'db02.yourhostname.com' inherits kazoonode {
   
       class { 'kazoo::bigcouch':
         cookie => $cookie,
