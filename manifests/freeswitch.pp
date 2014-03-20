@@ -34,7 +34,7 @@ class kazoo::freeswitch (
   exec { 'symlink-haproxy-cfg': 
     command => "/bin/ln -s /etc/kazoo/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg"
   }
-  file {'/etc/haproxy/haproxy.conf':
+  file {'/etc/haproxy/haproxy.cnf':
     notify  => Service['haproxy'],
     ensure  => file,
     require => [
