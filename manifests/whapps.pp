@@ -57,7 +57,10 @@ class kazoo::whapps (
   
   #configure kazoo
   file {'/etc/kazoo/config.ini':
-    notify  => [Service['kz_ecallmgr'], Service['kz_whistle_apps'],
+    notify  => [
+      Service['kz_ecallmgr'],
+      Service['kz_whistle_apps']
+    ],
     ensure  => file,
     require => Package['kazoo-R15B'],
     content => template('kazoo/config.ini.erb')
