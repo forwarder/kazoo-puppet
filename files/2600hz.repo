@@ -1,0 +1,53 @@
+[2600hz_base]
+name=2600hz-$releasever - Base 
+baseurl=http://repo.2600hz.com/base-stable/
+gpgcheck=0
+enabled=1
+
+[2600hz_R15B]
+name=2600hz-$releasever - R15B
+baseurl=http://repo.2600hz.com/R15B-stable/
+gpgcheck=0
+enabled=1
+
+[2600hz_R16B]
+name=2600hz-$releasever - R16B
+baseurl=http://repo.2600hz.com/R16B-stable/
+gpgcheck=0
+enabled=0
+
+[2600hz_base_staging]
+name=2600hz-$releasever - Base Staging
+baseurl=http://repo.2600hz.com/base-staging/
+gpgcheck=0
+enabled=0
+
+[2600hz_R15B_staging]
+name=2600hz-$releasever - R15B Staging
+baseurl=http://repo.2600hz.com/R15B-staging/
+gpgcheck=0
+enabled=0
+
+[2600hz_R16B_staging]
+name=2600hz-$releasever - R16B Staging
+baseurl=http://repo.2600hz.com/R16B-staging/
+gpgcheck=0
+enabled=0
+
+[2600hz_base_latest]
+name=2600hz-$releasever - Base Latest
+baseurl=http://repo.2600hz.com/base-latest/
+gpgcheck=0
+enabled=0
+
+[2600hz_R15B_latest]
+name=2600hz-$releasever - R15B Latest
+baseurl=http://repo.2600hz.com/R15B-latest/
+gpgcheck=0
+enabled=0
+
+[2600hz_R16B_latest]
+name=2600hz-$releasever - R16B Latest
+baseurl=http://repo.2600hz.com/R16B-latest/
+gpgcheck=0
+enabled=0

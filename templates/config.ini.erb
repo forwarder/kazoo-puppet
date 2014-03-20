@@ -1,0 +1,26 @@
+; section are between [] = [section]
+; key = value
+; to comment add ";" in front of the line
+ 
+[amqp]
+uri = "amqp://guest:guest@<%= @rabbitmq_ip %>:5672"
+ 
+[bigcouch]
+compact_automatically = false
+cookie = <%= @cookie %>
+ip = "127.0.0.1"
+port = 15984
+;username = ""
+;password = ""
+admin_port = 15986
+ 
+[whistle_apps]
+cookie = <%= @cookie %>
+ 
+[ecallmgr]
+cookie = <%= @cookie %>
+ 
+[log]
+syslog = info
+console = notice
+file = error

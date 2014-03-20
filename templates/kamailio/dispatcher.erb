@@ -1,0 +1,11 @@
+### Dispatcher Set IDs:
+### 1 - Primary media servers
+### 2 - Backup media servers
+### 3 - Alternate media server IPs (used only for classification)
+### 10 - Presence servers (if not locally handled)
+### 20 - Registrar servers (if not locally handled)
+
+# setid(integer) destination(sip uri) flags (integer, optional)
+<% @freeswitch_nodes.each do |node| -%>
+1 sip:<%= node.ip %>:11000 2
+<% end -%>
