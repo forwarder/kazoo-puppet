@@ -16,19 +16,19 @@ class kazoo::whapps (
   
   #configure kamailio
   exec { 'set-rabbitmq-dialoginfo-ip':
-    command => "s/guest:guest@127.0.0.1:5672\/dialoginfo/guest:guest@'${rabbitmq_ip}':5672\/dialoginfo/g' /etc/kazoo/kamailio/local.cfg"
+    command => "/bin/sed 's/guest:guest@127.0.0.1:5672\/dialoginfo/guest:guest@'${rabbitmq_ip}':5672\/dialoginfo/g' /etc/kazoo/kamailio/local.cfg"
   }
   exec { 'set-rabbitmq-callmgr-ip': 
-    command => "sed -i 's/guest:guest@127.0.0.1:5672\/callmgr/guest:guest@'${rabbitmq_ip}':5672\/callmgr/g' /etc/kazoo/kamailio/local.cfg"
+    command => "/bin/sed -i 's/guest:guest@127.0.0.1:5672\/callmgr/guest:guest@'${rabbitmq_ip}':5672\/callmgr/g' /etc/kazoo/kamailio/local.cfg"
   }
   exec { 'set-kamailio-ip': 
-    command => "'s/127.0.0.1/'${ipaddress}'/g' /etc/kazoo/kamailio/local.cfg"
+    command => "/bin/sed -i 's/127.0.0.1/'${ipaddress}'/g' /etc/kazoo/kamailio/local.cfg"
   }
   exec { 'set-kamailio-hostname': 
-    command => "'s/kamailio.2600hz.com/'${fqdn}'/g' /etc/kazoo/kamailio/local.cfg"
+    command => "/bin/sed -i 's/kamailio.2600hz.com/'${fqdn}'/g' /etc/kazoo/kamailio/local.cfg"
   }
   exec { 'set-kazoo-rabbitmq-ip': 
-    command => "sed -i 's|uri = \"amqp://guest:guest@127.0.0.1:5672\"|uri = \"amqp://guest:guest@${rabbitmq_ip}:5672\"|g' /etc/kazoo/config.ini"
+    command => "/bin/sed -i 's|uri = \"amqp://guest:guest@127.0.0.1:5672\"|uri = \"amqp://guest:guest@${rabbitmq_ip}:5672\"|g' /etc/kazoo/config.ini"
   }
   
   #configure haproxy
