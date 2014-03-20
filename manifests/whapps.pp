@@ -1,6 +1,6 @@
 class kazoo::whapps (
   
-  $cookie = 'change_me'.
+  $cookie = 'change_me',
   $rabbitmq_ip = '127.0.0.1',
   $bigcouch_nodes = [],
   $freeswitch_nodes = []
