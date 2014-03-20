@@ -1,5 +1,6 @@
 class kazoo::freeswitch (
   
+  $cookie = 'change_me',
   $rabbitmq_ip = '127.0.0.1',
   $bigcouch_nodes = []
   
