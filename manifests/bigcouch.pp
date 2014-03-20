@@ -11,7 +11,6 @@ class kazoo::bigcouch (
   
   package { 'kazoo-bigcouch-R15B': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
 
-
   define add_node ($ip, $hostname) {
     unless $hostname == $fqdn {
       exec { 'add-node':
