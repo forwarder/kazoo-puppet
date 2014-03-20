@@ -13,9 +13,9 @@ class kazoo::bigcouch (
 
   if $is_primary == true {
     each($bigcouch_nodes) |$node| {
-      unless $node.hostname == $fqdn {
+      unless $node['hostname'] == $fqdn {
         exec { 'add-node':
-          command: "curl -X PUT ${$fqdn}:5986/nodes/bigcouch@${node.hostname} -d {}",
+          command: "curl -X PUT ${fqdn}:5986/nodes/bigcouch@${node.hostname} -d {}",
           require: Service['bigcouch']
         }
       }
