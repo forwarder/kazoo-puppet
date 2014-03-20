@@ -11,15 +11,18 @@ class kazoo::bigcouch (
   
   package { 'kazoo-bigcouch-R15B': ensure => installed, require => File['/etc/yum.repos.d/2600hz.repo'] }
 
-  if $is_primary == true {
-    each($bigcouch_nodes) |$node| {
-      unless $node['hostname'] == $fqdn {
-        exec { 'add-node':
-          command: "curl -X PUT ${fqdn}:5986/nodes/bigcouch@${node['hostname']} -d {}",
-          require: Service['bigcouch']
-        }
+  define add_nodes {
+    $node = $name
+    unless $node['hostname'] == $fqdn {
+      exec { 'add-node':
+        command: "curl -X PUT ${fqdn}:5986/nodes/bigcouch@${node['hostname']} -d {}",
+        require: Service['bigcouch']
       }
     }
+  }
+  
+  if $is_primary == true {
+    add_nodes { $bigcouch_nodes: }
   }
   
   service { 'bigcouch':
