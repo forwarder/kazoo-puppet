@@ -88,7 +88,7 @@ class kazoo::whapps (
     enable => true,
     require => [
       Package['haproxy'],
-      File['/etc/haproxy/haproxy.conf']
+      File['/etc/haproxy/haproxy.cnf']
     ]
   }
   

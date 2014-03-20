@@ -50,7 +50,7 @@ class kazoo::freeswitch (
     enable => true,
     require => [
       Package['haproxy'],
-      Exec['remove-haproxy-cfg','symlink-haproxy-cfg']
+      File['/etc/haproxy/haproxy.cnf']
     ]
   }
   
