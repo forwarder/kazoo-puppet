@@ -29,10 +29,10 @@ class kazoo::freeswitch (
   
   #configure haproxy
   exec { 'remove-haproxy-cfg': 
-    command => "rm -rf /etc/haproxy/haproxy.cfg"
+    command => "/bin/rm -rf /etc/haproxy/haproxy.cfg"
   }
   exec { 'symlink-haproxy-cfg': 
-    command => "ln -s /etc/kazoo/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg"
+    command => "/bin/ln -s /etc/kazoo/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg"
   }
   file {'/etc/haproxy/haproxy.conf':
     notify  => Service['haproxy'],
