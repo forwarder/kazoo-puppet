@@ -12,7 +12,8 @@ class kazoo::ui {
   
   exec { 'set-default-document': 
     command => "/bin/sed -i 's#/var/www/html#/var/www/html/kazoo-ui#g' /etc/httpd/conf/httpd.conf",
-    require => Package['kazoo-ui']
+    require => Package['kazoo-ui'],
+    notify => Service['httpd']
   }
   
   service { 'httpd':
