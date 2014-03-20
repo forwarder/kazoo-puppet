@@ -7,5 +7,5 @@
 
 # setid(integer) destination(sip uri) flags (integer, optional)
 <% @freeswitch_nodes.each do |node| -%>
-1 sip:<%= node.ip %>:11000 2
+1 sip:<%= node['ip'] %>:11000 2
 <% end -%>
