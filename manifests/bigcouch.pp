@@ -1,4 +1,4 @@
-class kazoo::whapps (
+class kazoo::bigcouch (
   
   $cookie = 'change_me',
   $rabbitmq_ip = '127.0.0.1',
